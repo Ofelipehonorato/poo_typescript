@@ -1,4 +1,4 @@
-// Criar uma classe para que a partir dela seja possível instanciar animais. Um animal deve ter um nome, cor, raça, peso, idade. Além dessas características, um animal deve emitir sons e se locomover.
+
 
 export class Animal{
   nome: string;
@@ -6,6 +6,26 @@ export class Animal{
   raca: string;
   peso: number;
   idade: number;
+  dataNascimento: Date;
+
+  constructor(
+    nome:string,
+    cor:string,
+    raca:string,
+    peso:number,
+    idade?:number )
+    {
+    this.nome = nome
+    this.cor = cor
+    this.raca = raca
+    this.peso = peso
+    this.dataNascimento = new Date()
+    if(idade){
+      this.idade = idade
+    } else {
+      this.idade = 0  
+    }
+  }
 
   emitirSom(som: string){
     console.log(`O animal ${this.raca} emite esse som: ${som}`)
